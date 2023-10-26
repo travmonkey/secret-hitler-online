@@ -14,14 +14,14 @@
             <div class="jumbotron">
                 <h1>This is Awesome</h1>
                 <p>Welcome to templating using EJS</p>
-                <form id="myForm">
+                <form action="/submit" method="post">
                     <label for="name">Name: </label>
-                    <input type="text" id="name" name="name" required> 
+                    <input type="string" id="name" name="name" required> 
                     <br>
                     <label for="age">Age:   </label>
                     <input type="number" id="age" name="age" required>
 
-                    <button name='button' type="button" onclick="postData()">Click Me!</button>
+                    <button name='button' type="submit">Click Me!</button>
                 </form>
             </div>
         </main>
