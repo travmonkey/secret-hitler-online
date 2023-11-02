@@ -21,7 +21,10 @@ app.get('/message', (req, res) => {
     res.render('../views/pages/messaging', {});
 });
 io.on('connection', (socket) => {
-    console.log('a user has connected');
+    socket.on('chat message', (msg) => {
+        console.log('message: ' + msg);
+        io.emit('chat message', msg);
+    });
 });
 app.post('/submit', (req, res) => {
     const name1 = req.body.name;

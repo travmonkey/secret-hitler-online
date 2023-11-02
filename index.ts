@@ -23,7 +23,10 @@ app.get('/message', (req: Request, res: Response) => {
 })
 
 io.on('connection', (socket) => {
-    console.log('a user has connected')
+    socket.on('chat message', (msg) => {
+        console.log('message: ' + msg)
+        io.emit('chat message', msg)
+    })
 })
 
 app.post('/submit', (req: Request, res: Response) => {
