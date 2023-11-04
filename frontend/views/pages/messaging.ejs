@@ -23,8 +23,9 @@
       <input id="input" autocomplete="off" /><button>Send</button>
     </form>
 
-    <!-- Inline JavaScript for test chat connections -->
     <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="connect.js"></script>
+    <!-- Inline JavaScript for test chat connections 
     <script>
       const socket = io();
   
@@ -46,6 +47,7 @@
         messages.appendChild(item)
         window.scrollTo(0, document.body.scrollHeight)
       })
+      -->
     </script>
   </body>
 </html>

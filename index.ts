@@ -2,6 +2,8 @@ import express, { Express, Request, Response } from 'express'
 import bodyParser from 'body-parser'
 import { createServer } from 'node:http'
 import { Server } from "socket.io"
+import * as path from 'path'
+
 
 const app: Express = express()
 const server = createServer(app)
@@ -10,16 +12,18 @@ const io = new Server(server)
 const port: Number = 5002
 
 app.use(bodyParser.urlencoded())
-app.use("/public", express.static('public'))
+app.use(express.static(path.join(__dirname + '/../frontend/public')))
+//app.use("/frontend/public/", express.static('public'))
+app.set('views', path.join(__dirname + '/../frontend/views'))
 
 app.set('view engine', 'ejs')
 
 app.get('/', (req: Request, res: Response) => {
-    res.render('../../frontend/views/pages/index', {})
+    res.render('pages/index', {})
 })
 
 app.get('/message', (req: Request, res: Response) => {
-    res.render('../../frontend/views/pages/messaging', {})
+    res.render('pages/messaging', {})
 })
 
 io.on('connection', (socket) => {
