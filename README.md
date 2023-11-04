@@ -7,7 +7,7 @@ WORK IN PROGRESS
 
 ## Installing NODEJS
 ### Arch
-`sudo pacman -S`
+`sudo pacman -S nodejs npm`
 
 
 ### Debian
