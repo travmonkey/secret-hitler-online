@@ -19,6 +19,7 @@ fitfo
 
 
 ## Installing node packages
+Run this in root directory
 `npm install`
 
 
@@ -26,3 +27,5 @@ fitfo
 `npm run build` to compile typescript into javascript
 
 `npm run start` to host the server 
+
+`npm run go` compile and then run server
