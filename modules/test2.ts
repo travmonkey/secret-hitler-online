@@ -1,1 +1,1 @@
-console.log('test2')
+export const text = 'test'
